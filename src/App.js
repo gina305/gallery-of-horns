@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react"; //Import the React Component
+import './App.css' //Link CSS file
+//Create an app compnent from react's original component. Similar to how classes work
+class App extends React.Component{
 
-function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
+  //Retrun JSX - which allows us to use javascript to render html
+  render(){
+    //Use empty tags (fragments)
+    return <> 
+      <header>
+        <h2> My first app</h2> <p>page 1</p>
       </header>
-    </div>
-  );
+      <main>
+        <article>
+          <h3>photo here</h3>
+
+        </article>
+      </main>
+    </>
+
 }
 
+}
 export default App;
