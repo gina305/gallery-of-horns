@@ -1,10 +1,19 @@
-h3,h2{
+h2,h1{
   color: rgb(245, 245, 245)
 }
 body{
-  background-color: brown;
+  background-color: rgb(3, 48, 69);
   margin: 5px;
 }
 p{
-  color:yellow;
+  color:rgb(191, 191, 191);
+}
+
+footer{
+  text-align: center;
+}
+
+img{
+  height: 100px;
+  width: 100px;
 }
