@@ -18,8 +18,7 @@ data.forEach((beastObj) => {
   const keyword = beastObj.keyword;
   const horns = beastObj.horns;
 
-  console.log(title);
-  //Push a new component consisting of the beast object varaibles
+  // Pass props for each beast to the HornedBeast component
   renderedBeasts.push(
     <HornedBeast 
     id = {id}
