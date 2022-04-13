@@ -1,26 +1,45 @@
 import React from "react"; //Import the React Component
 import { render } from "react-dom";
-import './App.css' //Link CSS file
-//Create an app compnent from react's original component. Similar to how classes work
+import './HornedBeast.css'
+import Card from 'react-bootstrap/Card';
 
 
+//Create an app component from react's original component. Similar to how classes work
 class HornedBeast extends React.Component {
+constructor(props){
+  super(props);
+  this.state={
+    faves:0,
+  };
+}
 
-  
-  //Retrun JSX - which allows us to use javascript to render html
+favored = () => {
+this.setState({
+  faves: this.state.faves + 1
+});
+}
+  //Rerun JSX - which allows us to use javascript to render html
   render(title) {
-    //console.log(this.props);
+
     //Wrap JSX in empty tags (fragments)
-    this.title=title
-    console.log(title);
     return <>
-      <article>
-        <h2>{title}</h2>
-        <img src={this.props.img} alt={this.props.title}></img>
-        <p id={this.props.id}>Title: {this.props.title}</p>
-        <p>{this.props.description}</p>
-        <p>Horns: {this.props.horns}</p>
-        <p>Keyword(s): {this.props.keyword}</p>
+    <article>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={this.props.img} alt={this.props.title} onClick={this.favored}/>
+        <Card.Body>
+        <p >Favs: {this.state.faves}</p>
+          <Card.Title>{this.props.title}</Card.Title>
+          <Card.Text>
+          {this.props.description}
+          </Card.Text>
+          <Card.Text style={{ display: 'block' }}>
+          Horns: {this.props.horns}
+          </Card.Text>
+          <Card.Text>
+          Keyword(s): {this.props.keyword}
+          </Card.Text>
+        </Card.Body>
+      </Card>
       </article>
     </>
    
