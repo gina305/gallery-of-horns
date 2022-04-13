@@ -2,7 +2,7 @@ import React from "react"; //Import the React Component
 import './App.css' //Link CSS file
 import HornedBeast from "./HornedBeast";
 import data from './data/data.json' //Import JSON data
-
+import './Main.css'
 
 class Main extends React.Component{
 //Return JSX an render data on the page

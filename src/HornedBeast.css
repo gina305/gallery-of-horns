@@ -19,15 +19,25 @@ img{
   justify-self: center;
 }
 p{
-  display: block;
+  display: inline-block;
 }
 #id{
   display: inline;
 }
-header{
-  text-align: center;
-}
+
 article{
-  color: rgb(3, 48, 69);
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  padding: 1vw;
+  margin: 5px;
+ 
 }
 
+article img{
+  cursor: pointer;
+}
+
+Card{
+  display: block;
+}
