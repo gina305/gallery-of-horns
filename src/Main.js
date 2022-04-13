@@ -17,7 +17,8 @@ data.forEach((beastObj) => {
   const img = beastObj.image_url;
   const keyword = beastObj.keyword;
   const horns = beastObj.horns;
-
+  
+  
   // Pass props for each beast to the HornedBeast component
   renderedBeasts.push(
     <HornedBeast 
