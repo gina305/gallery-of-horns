@@ -10,7 +10,7 @@ render(){
   let renderedBeasts =[];
 
 //Loop through imported array of object literals
-data.forEach((beastObj) => {
+data.forEach((beastObj, index) => {
   const id = beastObj._id;
   const title = beastObj.title;
   const description = beastObj.description;
@@ -18,7 +18,7 @@ data.forEach((beastObj) => {
   const keyword = beastObj.keyword;
   const horns = beastObj.horns;
   
-  
+
   // Pass props for each beast to the HornedBeast component
   renderedBeasts.push(
     <HornedBeast 
@@ -28,6 +28,7 @@ data.forEach((beastObj) => {
     img = {img}
     keyword = {keyword}
     horns = {horns}
+    key={index}
     />
   );
  

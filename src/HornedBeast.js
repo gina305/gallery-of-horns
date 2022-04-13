@@ -9,10 +9,8 @@ class HornedBeast extends React.Component {
   
   //Retrun JSX - which allows us to use javascript to render html
   render(title) {
-    //console.log(this.props);
+
     //Wrap JSX in empty tags (fragments)
-    this.title=title
-    console.log(title);
     return <>
       <article>
         <h2>{title}</h2>
