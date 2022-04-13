@@ -28,7 +28,7 @@ data.forEach((beastObj, index) => {
     img = {img}
     keyword = {keyword}
     horns = {horns}
-    key={index}
+    key ={id}
     />
   );
  

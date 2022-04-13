@@ -12,10 +12,10 @@ class HornedBeast extends React.Component {
 
     //Wrap JSX in empty tags (fragments)
     return <>
-      <article>
+      <article id={this.props.id}>
         <h2>{title}</h2>
         <img src={this.props.img} alt={this.props.title}></img>
-        <p id={this.props.id}>Title: {this.props.title}</p>
+        <p >Title: {this.props.title}</p>
         <p>{this.props.description}</p>
         <p>Horns: {this.props.horns}</p>
         <p>Keyword(s): {this.props.keyword}</p>
