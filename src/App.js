@@ -1,8 +1,10 @@
 import React from "react"; //Import the React Component
-import Header from './Header.js' //Import the Header Component
+import Header from './Header.js' //Import the Header (or whatever you want to name it) from the .js file
 import Main from './Main.js'
 import Footer from './Footer.js'
 import './App.css' //Link CSS file
+
+
 //Create an app compnent from react's original component. Similar to how classes work
 class App extends React.Component {
 
@@ -10,13 +12,10 @@ class App extends React.Component {
   render() {
     //Use empty tags (fragments)
     return <>
-      <header>
         {/* //Contents of the header component are rendered here. */}
         <Header />
         <Main/>
-        <Footer/>
-      </header>
-     
+     <Footer/>
     </>
 
   }

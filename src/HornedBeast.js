@@ -1,20 +1,34 @@
 import React from "react"; //Import the React Component
+import { render } from "react-dom";
 import './App.css' //Link CSS file
 //Create an app compnent from react's original component. Similar to how classes work
-class HornedBeast extends React.Component{
 
+
+class HornedBeast extends React.Component {
+
+  
   //Retrun JSX - which allows us to use javascript to render html
-  render(){
-    //console.log(this.props.title);
-    //Use empty tags (fragments)
-    return <> 
-        <h2> Narwhal</h2> 
-        <img src='http://3.bp.blogspot.com/_DBYF1AdFaHw/TE-f0cDQ24I/AAAAAAAACZg/l-FdTZ6M7z8/s1600/Unicorn_and_Narwhal_by_dinglehopper.jpg' alt='' title='UniWhal'></img>
-        <p>A unicorn and a narwhal nuzzling their horns</p>
+  render(title) {
+    //console.log(this.props);
+    //Wrap JSX in empty tags (fragments)
+    this.title=title
+    console.log(title);
+    return <>
+      <article>
+        <h2>{title}</h2>
+        <img src={this.props.img} alt={this.props.title}></img>
+        <p id={this.props.id}>Title: {this.props.title}</p>
+        <p>{this.props.description}</p>
+        <p>Horns: {this.props.horns}</p>
+        <p>Keyword(s): {this.props.keyword}</p>
+      </article>
     </>
+   
+  }
 
 }
 
-}
-export default HornedBeast; //Make the component available for import
 
+
+//Make the horned beast component to make it available for to other components
+export default HornedBeast; 
