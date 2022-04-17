@@ -1,10 +1,18 @@
 h2,h1{
   color: rgb(245, 245, 245)
 }
+
+/* Polka dots background attribution: https://dev.to/clairecodes/how-to-create-a-polka-dot-background-with-css-23m0 */
 body{
-  background-color: rgb(3, 48, 69);
+  background-color: rgb(41, 68, 119);
   margin: 5px;
-}
+  background-image: radial-gradient(#1403ac 20%, transparent 20%),
+  radial-gradient(#5c0484 20%, transparent 20%);
+  background-color: #0963a3;
+  background-position: 0 0, 50px 50px;
+  background-size: 100px 100px;
+  }
+
 p{
   color:rgb(191, 191, 191);
 }
@@ -25,19 +33,17 @@ p{
   display: inline;
 }
 
-article{
+/* article{
   display: flex;
   flex-direction: column;
   width: 300px;
   padding: 1vw;
   margin: 5px;
  
-}
+} */
 
 article img{
   cursor: pointer;
 }
 
-Card{
-  display: block;
-}
+

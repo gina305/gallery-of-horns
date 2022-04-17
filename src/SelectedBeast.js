@@ -1,7 +1,6 @@
 import React from "react"; //Import the React Component
 import Card from 'react-bootstrap/Card';
 import './HornedBeast.css'
-import { IconName } from "react-icons/fa";
 
 //Create an app component from react's original component. Similar to how classes work
 class HornedBeast extends React.Component {
@@ -23,18 +22,18 @@ this.setState({
     //Wrap JSX in empty tags (fragments)
     return <>
     <article className="beast">
-      <Card style={{ width: '18rem', margin:'5px', height: '30rem', color:'black', border: '3px solid purple',background: 'pink' }}>
-        <Card.Img style={{ border: '2px solid purple', background: 'white'}} variant="top" src={this.props.img} alt={this.props.title} onClick={this.favored}/>
+      <Card style={{ width: '18rem' }}>
+        <Card.Img variant="top" src={this.props.img} alt={this.props.title} onClick={this.favored}/>
         <Card.Body>
-        <p style={{color:'purple',}}>Favs: {this.state.faves}</p>
+        <p >Favs: {this.state.faves}</p>
           <Card.Title>{this.props.title}</Card.Title>
-          <Card.Text style={{color:'black', display:'block'}}>
+          <Card.Text>
           {this.props.description}
           </Card.Text>
-          <Card.Text style={{color:'black', display:'block'}}>
+          <Card.Text >
           Horns: {this.props.horns}
           </Card.Text>
-          <Card.Text style={{color:'black', display:'block'}}>
+          <Card.Text>
           Keyword(s): {this.props.keyword}
           </Card.Text>
         </Card.Body>

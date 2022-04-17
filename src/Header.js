@@ -24,7 +24,7 @@ class Header extends React.Component{
     return <>()
       <header>
         <h1 onClick={this.Example}> Gallery of Horned Beasts</h1>
-        <p>Click the title above to see something cool :-)</p>
+        <p>{this.props.title}</p>
       </header>
       
 
