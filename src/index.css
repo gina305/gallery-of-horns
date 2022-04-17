@@ -11,3 +11,11 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+h2,h1{
+  border-bottom: 3px solid royalblue;
+  color: black;
+}
+
+header{
+  color: rgb(0, 0, 0)
+}
