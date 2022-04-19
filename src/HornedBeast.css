@@ -47,3 +47,8 @@ article img{
 }
 
 
+
+#beastDiv{
+  display: flex;
+  flex-wrap: wrap;
+}

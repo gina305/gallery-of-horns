@@ -12,10 +12,16 @@ code {
     monospace;
 }
 h2,h1{
-  border-bottom: 3px solid royalblue;
+  border-bottom: 3px solid rgb(255, 255, 255);
   color: black;
 }
 
 header{
   color: rgb(0, 0, 0)
+}
+
+
+#beastDiv{
+  display: flex;
+  flex-wrap: wrap;
 }

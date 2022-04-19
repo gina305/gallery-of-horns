@@ -16,14 +16,13 @@ class Header extends React.Component{
   
  
 
-
   //Retrun JSX - which allows us to use javascript to render html
   render(){
     // console.log(this.props.name); //Get all (names) of the poperites of the header component(s)
     //Use empty tags (fragments)
     return <>()
       <header>
-        <h1 onClick={this.Example}> Gallery of Horned Beasts</h1>
+        <h1 onClick={this.props.modalBeast}> Gallery of Horned Beasts</h1>
         <p>{this.props.title}</p>
       </header>
       
