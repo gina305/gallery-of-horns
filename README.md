@@ -1,3 +1,52 @@
+# Features
+
+## Feature 1- Display Images
+
+Estimate of time needed to complete: 2
+
+Start time: __8:15 pm___
+
+Finish time: _11:13pm_
+
+Actual time needed to complete: _3_
+
+
+## Feature 2- Allow users to vote for their favorite beast
+
+Estimate of time needed to complete: 2
+
+Start time: __11:30 pm___
+
+Finish time: _1:30 am_
+
+Actual time needed to complete: _3_
+
+
+## Feature 3 - Bootstrap your app to accommodate different screen sizes
+
+Estimate of time needed to complete: 2
+
+Start time: __8:15 pm___
+
+Finish time: _11:13pm_
+
+Actual time needed to complete: _3._
+
+## Feature 1- Allow user to click on an image and display it as a modal.
+
+Estimate of time needed to complete: 3 
+
+Start time: __12:00am___
+
+Finish time: _05:00pm_
+
+Actual time needed to complete: 6_
+
+
+------------------------------
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
@@ -68,3 +117,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `npm run build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+
+
