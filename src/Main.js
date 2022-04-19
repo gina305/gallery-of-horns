@@ -49,7 +49,7 @@ import SelectedBeast from "./SelectedBeast";
 
      
 
-console.log(beasts)
+// View beasts: console.log(beasts)
 
 
       return (<>

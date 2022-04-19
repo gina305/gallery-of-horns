@@ -8,6 +8,7 @@ import { useState } from 'react';
 import SelectedBeast from './SelectedBeast'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image'
 
 //Create an app component from react's original component. Similar to how classes work
 class App extends React.Component {
@@ -21,7 +22,7 @@ class App extends React.Component {
     super(props);
     this.state = {
       selectedBeastObj: {},
-      showModal: true, //change after test
+      showModal: false,
       beastName: '',
       beasts: data
     };
@@ -29,14 +30,13 @@ class App extends React.Component {
 
   modalBeast =  (beastObj) =>{
 
+    //change the value of the selectedBeastObj to beastObj
     this.setState({
       selectedBeastObj: beastObj
     })
-    console.log(beastObj);
   };
 
-  //Modal handlers
-
+  //Modal handlers*********************
   hideModal = () => {
     this.setState({
       showModal: false
@@ -49,7 +49,7 @@ class App extends React.Component {
     });
 
   }
-  //Render calculated values
+  //Render calculated values**************
   render() {
     let array = [];
 
@@ -79,8 +79,8 @@ class App extends React.Component {
     }
     let beastFunction = beastmode();
 
-    
-    console.log(this.state)
+    // things stored in state
+    // console.log(this.state)
 
     //Use empty tags (fragments)
     return (<>
@@ -89,14 +89,18 @@ class App extends React.Component {
       {/* Pass these values to the following values to the Main component */}
       <Main array={this.state.beasts} modalBeast={this.modalBeast} showModal = {this.showModal}/>
       {/* Boostrap created the Modal Component */}
-      <Modal show={this.state.showModal} onHide={this.hideModal}>
+      <Modal show={this.state.showModal} onHide={this.hideModal} dialogClassName="modal-90w"  style={{ color: 'purple !important'}}>
         <Modal.Header closeButton>
           <Modal.Title>Beast: {this.state.selectedBeastObj.title}</Modal.Title>
         </Modal.Header>
-
-        <Modal.Body>
-          Woohoo, you're reading this text in a modal!
+        
+        <Modal.Body><img src={this.state.selectedBeastObj.image_url} className='img-fluid rounded'
+        alt='example'
+        style={{ width: '500px' }}/>
         </Modal.Body>
+         <p className="par">Description: {this.state.selectedBeastObj.description}</p>
+         <p className="par">Keywords: {this.state.selectedBeastObj.keyword}</p>
+         <p className="par">Horns: {this.state.selectedBeastObj.description}</p>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.hideModal}>
             Close
