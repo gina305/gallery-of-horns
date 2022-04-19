@@ -21,6 +21,8 @@ img{
 }
 p{
   display: block;
+  color: purple;
+  padding-left: 6px;
 }
 #id{
   display: inline;
@@ -35,4 +37,13 @@ article{
 #beastDiv{
   display: flex;
   flex-wrap: wrap;
+}
+.modal-90w { width: 90% !important; }
+
+ .modal-90w{
+color: purple
+}
+.par{
+  color: black;
+  padding-left: 15px;
 }

@@ -28,41 +28,34 @@ import SelectedBeast from "./SelectedBeast";
   
       
       let beasts = this.props.array;
-      const beastFunction = (beastObj) => {
-        const beastComponent = beasts.map(function () {
-          const id = beastObj._id;
-          const title = beastObj.title;
-          const description = beastObj.description;
-          const img = beastObj.image_url;
-          const keyword = beastObj.keyword;
-          const horns = beastObj.horns;
-          const modal = this.props.modal;
 
-          console.log('function fired');
-          beasts.push(
+        const beastMap = beasts.map( beastObj =>
+        
             <HornedBeast
-              id={id}
-              title={title}
-              description={description}
-              img={img}
-              keyword={keyword}
-              horns={horns}
-              key={id}
-              modal={modal}
+              id={beastObj._id}
+              title={beastObj.title}
+              description={beastObj.description}
+              img={beastObj.image_url}
+              keyword={beastObj.keyword}
+              horns={beastObj.horns}
+              key={beastObj._id}
+              beast={beastObj}
               //Add function you wish to pass along to the horned beast component
               modalBeast={this.props.modalBeast}
               beasts ={beasts}
-              showModal = {this.props.showModal}
-            />)
+              showModal = {this.props.showModal}              
+            />
+            )
 
-      });
-      };
+     
+
+// View beasts: console.log(beasts)
 
 
       return (<>
       {/* Render beasts in the a div with the id of 'beastDiv' */}
         <div id='beastDiv'>
-          {beasts}
+          {beastMap}
 
           <SelectedBeast beasts = {this.state.beasts}/>
 

@@ -8,52 +8,49 @@ import { useState } from 'react';
 import SelectedBeast from './SelectedBeast'
 import Modal from 'react-bootstrap/Modal';
 import Button from 'react-bootstrap/Button';
+import Image from 'react-bootstrap/Image'
 
 //Create an app component from react's original component. Similar to how classes work
 class App extends React.Component {
 
-  //   Constructors are used to:
-  //   Initialize the local state of the component by assigning an object to this.state
-  //   Bind event handlers that occur in the component
+  //Constructors are used to:
+  // - Initialize the local state of the component by assigning an object to this.state
+  // - Bind event handlers that occur in the component
   constructor(props) {
 
-    //Used for passing data from one component to another. It allows you to set property or use 'this' inside the constructor
+  //Used for passing data from one component to another. It allows you to set property or use 'this' inside the constructor
     super(props);
     this.state = {
-      selectedid: 0,
-      showModal: true, //change after test
-      beastName:''
+      selectedBeastObj: {},
+      showModal: false,
+      beastName: '',
+      beasts: data
     };
   }
 
-  modalBeast =  (beastId) =>{
+  modalBeast =  (beastObj) =>{
 
+    //change the value of the selectedBeastObj to beastObj
     this.setState({
-      selectedid: beastId
+      selectedBeastObj: beastObj
     })
-    console.log(beastId);
   };
 
-  //Modal handlers
-
+  //Modal handlers*********************
   hideModal = () => {
     this.setState({
       showModal: false
     });
   }
 
-  showModal = (name) => {
+  showModal = () => {
     this.setState({
-      showModal: true,
-      name: name
+      showModal: true
     });
 
   }
-  //Render calculated values
+  //Render calculated values**************
   render() {
-
-   
-
     let array = [];
 
     //Declare a function 
@@ -79,35 +76,35 @@ class App extends React.Component {
           />
         )
       }))
-
     }
     let beastFunction = beastmode();
 
-    
-  
-    //console.log(this.state.selectedid)
+    // things stored in state
+    // console.log(this.state)
 
     //Use empty tags (fragments)
     return (<>
       {/* //Contents of the header component are rendered here. */}
       <Header modalBeast={this.modalBeast}/>
       {/* Pass these values to the following values to the Main component */}
-      <Main array={array} modalBeast={this.modalBeast} showModal = {this.showModal}/>
-
+      <Main array={this.state.beasts} modalBeast={this.modalBeast} showModal = {this.showModal}/>
       {/* Boostrap created the Modal Component */}
-      <Modal show={this.state.showModal} onHide={this.hideModal}>
-      <Modal.Header closeButton>
-          <Modal.Title>Beast: {this.state.name}</Modal.Title>
+      <Modal show={this.state.showModal} onHide={this.hideModal} dialogClassName="modal-90w"  style={{ color: 'purple !important'}}>
+        <Modal.Header closeButton>
+          <Modal.Title>Beast: {this.state.selectedBeastObj.title}</Modal.Title>
         </Modal.Header>
-      
-        <Modal.Body>
-          
-          Woohoo, you're reading this text in a modal!</Modal.Body>
+        
+        <Modal.Body><img src={this.state.selectedBeastObj.image_url} className='img-fluid rounded'
+        alt='example'
+        style={{ width: '500px' }}/>
+        </Modal.Body>
+         <p className="par">Description: {this.state.selectedBeastObj.description}</p>
+         <p className="par">Keywords: {this.state.selectedBeastObj.keyword}</p>
+         <p className="par">Horns: {this.state.selectedBeastObj.description}</p>
         <Modal.Footer>
           <Button variant="secondary" onClick={this.hideModal}>
             Close
           </Button>
-       
         </Modal.Footer>
       </Modal>
       <Footer />
@@ -115,6 +112,4 @@ class App extends React.Component {
   }
 }
 //Make component available for import
-
-
 export default App;
