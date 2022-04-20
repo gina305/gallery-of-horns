@@ -32,7 +32,7 @@ Finish time: _11:13pm_
 
 Actual time needed to complete: _3._
 
-## Feature 1- Allow user to click on an image and display it as a modal.
+## Feature 4- Allow user to click on an image and display it as a modal.
 
 Estimate of time needed to complete: 3 
 
@@ -41,6 +41,18 @@ Start time: __12:00am___
 Finish time: _05:00pm_
 
 Actual time needed to complete: 6_
+
+
+## Feature 5- Allow user to filter by Numbers of Horns
+
+
+Estimate of time needed to complete: 2 
+
+Start time: 08:00pm
+
+Finish time: 10:00pm
+
+Actual time needed to complete: 6
 
 
 ------------------------------
