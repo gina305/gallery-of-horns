@@ -47,3 +47,18 @@ color: purple
   color: black;
   padding-left: 15px;
 }
+
+.bodyText, .mb-3{
+  color: white;
+  width: 25%;
+  padding-left: 8px;
+  display: inline-block;
+}
+
+.dropbox{border: 2px solid purple;
+}
+
+.options{
+  width: 25%;
+  padding-left: 8px;
+}
