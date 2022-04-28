@@ -1,4 +1,11 @@
-main{
+h2,h1{
+  border-top: 3px solid rgb(242, 242, 242);
+  color: rgb(0, 0, 0)
+}
+
+
+#beastDiv{
   display: flex;
   flex-wrap: wrap;
 }
+

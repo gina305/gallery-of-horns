@@ -1,52 +1,69 @@
-import React from "react"; //Import the React Component
-import './App.css' //Link CSS file
-import HornedBeast from "./HornedBeast";
-import data from './data/data.json' //Import JSON data
-import './Main.css'
+import React,{useState} from "react"; //Import the React Component
+import App from './App'
+import HornedBeast from './HornedBeast'
+import Header from './Header'
+import beastmode from './App'
+import SelectedBeast from "./SelectedBeast";
 
-class Main extends React.Component{
-//Return JSX an render data on the page
-render(){
-  let renderedBeasts =[];
+  //Create an app component from react's original component. Similar to how classes work
+  class Main extends React.Component {
 
-//Loop through imported array of object literals
-data.forEach((beastObj, index) => {
-  const id = beastObj._id;
-  const title = beastObj.title;
-  const description = beastObj.description;
-  const img = beastObj.image_url;
-  const keyword = beastObj.keyword;
-  const horns = beastObj.horns;
+
+    constructor(props) {
+
+      //Used for passing data from one component to another. It allows you to set property or use 'this' inside the constructor
+      super(props);
+      this.state = {
+        beasts: this.props.array
+          //call the Selected Beast Component
+       
+      };
+    }
   
 
-  // Pass props for each beast to the HornedBeast component
-  renderedBeasts.push(
-    <HornedBeast 
-    id = {id}
-    title = {title}
-    description = {description}
-    img = {img}
-    keyword = {keyword}
-    horns = {horns}
-    key ={id}
-    />
-  );
- 
-});
 
+///////////////////////////  
+  //Map over the JSON data in your Main component to render each beast
+    render() {  
   
-  
-    //Use empty tags (fragments)
-    return <> 
-      <main>
-      {renderedBeasts}
-      </main>
-    </>
+      
+      let beasts = this.props.array;
+
+        const beastMap = beasts.map( beastObj =>
+        
+            <HornedBeast
+              id={beastObj._id}
+              title={beastObj.title}
+              description={beastObj.description}
+              img={beastObj.image_url}
+              keyword={beastObj.keyword}
+              horns={beastObj.horns}
+              key={beastObj._id}
+              beast={beastObj}
+              //Add function you wish to pass along to the horned beast component
+              modalBeast={this.props.modalBeast}
+              beasts ={beasts}
+              showModal = {this.props.showModal}              
+            />
+            )
+
+     
+
+// View beasts: console.log(beasts)
+
+
+      return (<>
+      {/* Render beasts in the a div with the id of 'beastDiv' */}
+        <div id='beastDiv'>
+          {beastMap}
+
+          <SelectedBeast beasts = {this.state.beasts}/>
+
+        </div>
+      </>)
+
+    }
 
   }
-
-}
-
-
-
-export default Main; //Make the component available for import
+  //Make component available for import
+  export default Main;
